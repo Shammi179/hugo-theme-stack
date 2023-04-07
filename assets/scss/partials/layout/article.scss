@@ -354,15 +354,18 @@
     td {
         text-align: left;
         padding: 4px 8px 4px 10px;
-        border: 1px solid var(--table-border-color);
+        
     }
-
+    th{
+        display: none;
+    }
     td {
         vertical-align: top;
     }
 
-    tr:nth-child(even) {
-        background-color: var(--tr-even-background-color);
+    td:first-child {
+        width: 20%;
+        white-space: nowrap;
     }
 
     .twitter-tweet {

@@ -29,9 +29,9 @@ article:
     lastUpdatedOn:
         other: Last updated on
 
-    readingTime:
-        one: "{{ .Count }} minute read"
-        other: "{{ .Count }} minute read"
+    # readingTime:
+    #     one: "{{ .Count }} minute read"
+    #     other: "{{ .Count }} minute read"
 
 notFound:
     title:

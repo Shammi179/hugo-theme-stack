@@ -6,7 +6,7 @@
     </button>
 
     <header>
-        {{ with .Site.Params.sidebar.avatar }}
+        <!-- {{ with .Site.Params.sidebar.avatar }}
             {{ if (default true .enabled) }}
             <figure class="site-avatar">
                 <a href="{{ .Site.BaseURL | relLangURL }}">
@@ -29,33 +29,14 @@
                 {{ end }}
             </figure>
             {{ end }}
-        {{ end }}
+        {{ end }} -->
         
         <div class="site-meta">
             <h1 class="site-name"><a href="{{ .Site.BaseURL | relLangURL }}">{{ .Site.Title }}</a></h1>
-            <h2 class="site-description">{{ .Site.Params.sidebar.subtitle }}</h2>
+            <!-- <h2 class="site-description">{{ .Site.Params.sidebar.subtitle }}</h2> -->
         </div>
     </header>
 
-    {{- with .Site.Menus.social -}}
-        <ol class="social-menu">
-            {{ range . }}
-                <li>
-                    <a 
-                        href='{{ .URL }}'
-                        {{ if eq (default true .Params.newTab) true }}target="_blank"{{ end }}
-                        {{ with .Name }}title="{{ . }}"{{ end }}
-                        rel="me"
-                    >
-                        {{ $icon := default "link" .Params.Icon }}
-                        {{ with $icon }}
-                            {{ partial "helper/icon" . }}
-                        {{ end }}
-                    </a>
-                </li>
-            {{ end }}
-        </ol>
-    {{- end -}}
 
     <ol class="menu" id="main-menu">
         {{ $currentPage := . }}
@@ -76,6 +57,7 @@
         {{ end }}
 
         <div class="menu-bottom-section">
+            <h2 class="site-footer">{{ .Site.Params.sidebar.subtitle }}</h2>
             {{- $currentLanguageCode := .Language.Lang -}}
             {{ with .Site.Home.AllTranslations }}
                 <li id="i18n-switch">  
@@ -98,3 +80,4 @@
         </div>
     </ol>
 </aside>
+
